@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="kr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <title>showpost</title>
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.4.1/components/accordion.css">
+    <link rel="stylesheet" href="/public/cleditor/jquery.cledior.css">
+
+    <script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
+    <script src="/public/semantic.min.js"></script>
+    <script src="/public/cleditor/jquery.cleditor.min.js"></script>
+
+
+</head>
+<body>
+
+    <div class= "ui blue fluid card">
+
+            <div class="content">
+                <%
+                var curTitle = posts._doc.title;
+                var curContents = posts._doc.contents;
+                var curWriter = posts._doc.writer.email;
+                
+                %>
+
+                <div id = "titleOutput" class="header"> <%= curTitle %></div>
+                <div class="meta">
+                    <span class="right floated time">1일전</span>
+                    <span class="category">일반</span>
+                </div>
+                <div id = "contentsOutput" class= "description">
+                    <%= curContents %>
+                </div>
+
+            </div>
+
+            <div class="extra content">
+                <div class="right floated author">
+                    <img src="/public/author.png" class="ui avatar image" alt=""><%=curWriter%>
+                </div>
+
+            </div>
+
+    </div>
+    
+</body>
+</html>
